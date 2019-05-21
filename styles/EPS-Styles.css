@@ -1,0 +1,201 @@
+body{
+	font-family: arial;
+}
+/* ------ HEADER ----- */
+#header{
+	background-color: lightblue;
+	display: grid;
+	grid-template-areas: 'page-title page-title logo';
+	justify-content: space-between;
+	align-content: center;
+	padding: .25% 2%;
+}
+#header .menu-hamburger{
+	display: none;
+}
+#header .page-title{
+	grid-area: page-title;
+	text-align: center;
+}
+#header .logo{
+	grid-area: logo;
+}
+#header .logo img{
+	float: right;
+	max-width: 50%;
+	height: auto;
+}
+/* ---------- */
+
+/* ------ SIDEBAR ----- */
+#sidebar{
+	display: grid;
+	background-color: pink;
+	grid-template-areas: 'sb-head sb-head sb-head' '. . sb-about''. . sb-services' '. . sb-photos' '. . sb-calendar' '. . sb-testimonials' '. . sb-contact';
+	 max-width: 10%;
+	/* height: 100%; */
+	padding-right: .75%;
+	text-align: right;
+}
+#sidebar .sb-head{
+	grid-area: sb-head;
+}
+#sidebar .sb-about{
+	grid-area: sb-about;
+}
+#sidebar .sb-services{
+	grid-area: sb-services;
+}
+#sidebar .sb-photos{
+	grid-area: sb-photos;
+}
+#sidebar .sb-calendar{
+	grid-area: sb-calendar;
+}
+#sidebar .sb-testimonials{
+	grid-area: sb-testimonials;
+}
+#sidebar .sb-contact{
+	grid-area: sb-contact;
+}
+/* ---------- */
+
+/* ------ MAIN ----- */
+	#main{
+		background-color: lavender;
+		padding: 2% 3%;
+		text-align: center;
+	}
+	#main .image{
+		width: 50%;
+		height: auto;
+	}
+/* ---------- */
+
+/* ------ FOOTER ----- */
+	#footer{
+		display: grid;
+		background-color: palegoldenrod;
+		grid-template-areas: 'f-left f-logo f-right' 'f-left f-logo f-right' 'f-social f-social f-social';
+		justify-content: space-between;
+	}
+	#footer .left-foot{
+		grid-area: f-left;
+	}
+	#footer .logo{
+		grid-area: f-logo;
+		text-align: center;
+	}
+	#footer .logo img{
+		max-width: 50%;
+		height: auto;	
+		margin: auto;
+	}
+	#footer .right-foot{
+		grid-area: f-right;
+		text-align: right;
+	}
+	#footer .social-media-links{
+		grid-area: f-social;
+	}
+/* ---------- */
+
+/* ----------------------------------------------- */
+@media (max-width: 600px){
+/* ------ HEADER ----- */
+	#header{
+		background-color: lightblue;
+		display: grid;
+		grid-template-areas: 'menu page-title logo';
+		justify-content: space-between;
+		padding: .25% 2%;
+		position: relative;
+		z-index: 0;
+	}
+	#header .menu-hamburger{
+		grid-area: menu;
+		display: inline;
+	}
+	#header .menu-hamburger img{
+		float: left;
+		max-width: 50%;
+		height: auto;
+		cursor: pointer;
+	}
+	#header .page-title{
+		grid-area: page-title;
+		text-align: center;
+	}
+	#header .logo{
+		grid-area: logo;
+		justify-content: center;
+	}
+	#header .logo img{
+		float: right;
+		max-width: 100%;
+		height: auto;
+	}
+	
+/* ---------- */
+	
+/* ------ SIDEBAR ----- */
+	#sidebar{
+		background-color: pink;
+		max-width: 60%;
+		height: 75vh;
+		padding: .75%;
+		padding-top: 10%;
+		text-align: center;
+		display: none;
+		z-index: 10;
+		position: absolute;
+		top: 10%;
+		left: 0;
+	
+	}
+	#sidebar h3{
+		padding: 5% 0;
+	}
+/* ---------- */
+
+/* ------ MAIN ----- */
+	#main{
+		background-color: lavender;
+		padding: 2% 3%;
+		text-align: center;
+	}
+	#main .image{
+		width: 50%;
+		height: auto;
+	}
+/* ---------- */
+
+/* ------ FOOTER ----- */
+	#footer{
+		display: grid;
+		background-color: palegoldenrod;
+		grid-template-areas: 'f-left f-right' 'f--left  f-right' 'f-social  f-social';
+	}
+	#footer .left-foot{
+		grid-area: f-left;
+		text-align: right;
+	}
+	#footer .logo{
+		grid-area: f-logo;
+		text-align: center;
+	}
+	#footer .logo img{
+		max-width: 50%;
+		height: auto;	
+		margin: auto;
+	}
+	#footer .right-foot{
+		grid-area: f-right;
+		text-align: left;
+	}
+	#footer .social-media-links{
+		grid-area: f-social;
+		text-align: center;
+	}
+/* ---------- */
+}
