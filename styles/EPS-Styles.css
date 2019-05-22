@@ -174,13 +174,16 @@ body{
 	#footer{
 		display: grid;
 		background-color: palegoldenrod;
-		grid-template-areas: 'f-left f-right' 'f--left  f-right' 'f-social  f-social';
+		/* grid-template-areas: 'f-left f-right' 'f--left  f-right' 'f-social  f-social'; */
+		grid-template-areas: 'f-left' 'f--left' 'f-social';
+		justify-content: center;
 	}
 	#footer .left-foot{
 		grid-area: f-left;
-		text-align: right;
+		text-align: center;
+		
 	}
-	#footer .logo{
+	/* #footer .logo{
 		grid-area: f-logo;
 		text-align: center;
 	}
@@ -192,7 +195,7 @@ body{
 	#footer .right-foot{
 		grid-area: f-right;
 		text-align: left;
-	}
+	} */
 	#footer .social-media-links{
 		grid-area: f-social;
 		text-align: center;
