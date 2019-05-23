@@ -1,4 +1,19 @@
 <?php
+	$contactName = "";
+	$contactPet = "";
+	$contactPhone = "";
+	$contactEmail = "";
+	$contactStartDate = "";
+	$contactStartTime = "";
+	$contactEndDate = "";
+	$contactEndTime = "";
+	$contactDetails = "";
+	$sendFail = "";
+	$sendSuccess = "";
+	$inPastError = "";
+	$negativeTimeError = "";
+	$sameTimeError = "";
+	$pleaseFixMsg = "";
 if(isset($_POST["contact-submit"]))
 {
 	//set form variables
@@ -101,7 +116,7 @@ if(isset($_POST["contact-submit"]))
 <body>
 	<div id="header">
 		<div class="menu-hamburger"><img src="images/menu2.png" onclick="showMenu();"></div>
-		<div class="page-title"><h1>PAGE TITLE</h1></div>
+		<div class="page-title"><h1>CONTACT</h1></div>
 		<div class="logo"><img src="images/logo-ph.png" ></div>
 	</div>
 	<div id="sidebar">
@@ -111,7 +126,7 @@ if(isset($_POST["contact-submit"]))
 		<div class="sb-photos"><h3><a href= "">Photos</a></h3></div>
 		<div class="sb-calendar"><h3><a href= "">Booking Calendar</a></h3></div>
 		<div class="sb-testimonials"><h3><a href= "">Testimonials</a></h3></div>
-		<div class="sb-contact"><h3><a href= "">Contact</a></h3></div>
+		<div class="sb-contact on-page"><h3><a href= "">Contact</a></h3></div>
 	</div>
 	<div id="main">
 	
@@ -158,7 +173,7 @@ else{
 		<div class="left-foot">
 			<a href="">About</a> | <a href="">Services</a><br>
 			<a href="">Photos</a> | <a href="">Booking Calendar</a><br>
-			<a href="">Testimonials</a> | <a href="">Contact</a>
+			<a href="">Testimonials</a> | <a href="" class="on-page">Contact</a>
 		</div>
 		<div class="social-media-links">
 		<p>SOCIAL MEDIA LINKS WILL GO HERE!!!</p>

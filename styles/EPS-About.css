@@ -1,0 +1,7 @@
+/* EPS ABOUT PAGE STYLES */
+@media (max-width: 600px){
+	#about-image{
+		width: 50%;
+		height: auto;
+	}
+}

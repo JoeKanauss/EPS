@@ -1,0 +1,7 @@
+/* EPS ABOUT UPDATE PAGE STYLES */
+@media (max-width: 600px){
+	#about-update-image img{
+		width: 25%;
+		height: auto;
+	}
+}

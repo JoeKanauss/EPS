@@ -1,0 +1,23 @@
+/* EPS SERVICES PAGE STYLES */
+@media (max-width: 600px){
+	.service{
+		display: grid;
+		grid-template-areas: 's-title' 's-image' 's-description' 's-check';
+	}
+	.service .service-title{
+		grid-area: s-title;
+		text-decoration: underline;
+		font-weight: bold;
+	}
+	.service .service-image{
+		grid-area: s-image;
+		width: 50%;
+		height: auto;
+	}	
+	.service .service-description{
+		grid-area: s-description;
+	}
+	.service .service-check{
+		grid-area: s-check;
+	}
+}

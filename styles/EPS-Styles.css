@@ -1,6 +1,10 @@
 body{
 	font-family: arial;
 }
+.on-page{
+	text-decoration: line-through;
+	
+}
 /* ------ HEADER ----- */
 #header{
 	background-color: lightblue;
@@ -36,6 +40,7 @@ body{
 	/* height: 100%; */
 	padding-right: .75%;
 	text-align: right;
+	
 }
 #sidebar .sb-head{
 	grid-area: sb-head;
@@ -65,10 +70,6 @@ body{
 		background-color: lavender;
 		padding: 2% 3%;
 		text-align: center;
-	}
-	#main .image{
-		width: 50%;
-		height: auto;
 	}
 /* ---------- */
 
@@ -124,7 +125,7 @@ body{
 	}
 	#header .page-title{
 		grid-area: page-title;
-		text-align: center;
+		1text-align: center;
 	}
 	#header .logo{
 		grid-area: logo;
@@ -163,10 +164,7 @@ body{
 		background-color: lavender;
 		padding: 2% 3%;
 		text-align: center;
-	}
-	#main .image{
-		width: 50%;
-		height: auto;
+		min-height: 65vh;
 	}
 /* ---------- */
 
@@ -174,7 +172,6 @@ body{
 	#footer{
 		display: grid;
 		background-color: palegoldenrod;
-		/* grid-template-areas: 'f-left f-right' 'f--left  f-right' 'f-social  f-social'; */
 		grid-template-areas: 'f-left' 'f--left' 'f-social';
 		justify-content: center;
 	}
@@ -183,19 +180,7 @@ body{
 		text-align: center;
 		
 	}
-	/* #footer .logo{
-		grid-area: f-logo;
-		text-align: center;
-	}
-	#footer .logo img{
-		max-width: 50%;
-		height: auto;	
-		margin: auto;
-	}
-	#footer .right-foot{
-		grid-area: f-right;
-		text-align: left;
-	} */
+	
 	#footer .social-media-links{
 		grid-area: f-social;
 		text-align: center;
