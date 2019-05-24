@@ -1,0 +1,18 @@
+<?php echo $_SERVER['SCRIPT_NAME'];?>
+
+<div class="service-info">
+				<div class="service-photo">
+					<img class="service-image" src="<?php echo $row['service_photo_link'];?>">
+				</div>
+				<div class="service-description">
+					<p><?php echo $row['service_description'];?></p>
+					<form action="<?php echo $_SERVER['SCRIPT_NAME'];?>" method="POST">
+						<input type="hidden" name="return-id" value="<?php echo $row['service_id'];?>">
+						<input type="button" class="check-button" name="check-button" value="CHECK AVAILABILITY">
+					</form>
+				</div>
+				
+if(isset($_POST['check-button'])){
+		 $return_id = $_POST['return-id'];
+		echo $return_id
+	}

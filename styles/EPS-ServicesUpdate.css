@@ -1,0 +1,17 @@
+/* EPS SERVICES PAGE STYLES */
+@media (max-width: 600px){
+	.service{	
+	}
+	.service-title{
+		text-decoration: underline;
+		font-weight: bold;
+	}
+	#selected-service .service-image {
+		width: 50%;
+		height: auto;
+	}	
+	.service-description p{
+		white-space: pre-wrap;
+		padding: 0;
+	}
+}

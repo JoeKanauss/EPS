@@ -1,6 +1,7 @@
 <?php
 //set up session
 session_start();
+$current_desc = "";
 $about_description = "";
 $fileTooLargeError = "";
 $wrongExtensionError = "";
@@ -10,9 +11,18 @@ $validForm = true;
 	
 if($_SESSION["user"] !== "admin")
 {
-	header("Location: EPS-About.html");
+	header("Location: EPS-About.php");
 }
 else{
+	include "localHostConnect.php";
+	
+	//load in current About page description
+	$sql = "SELECT about_desc FROM about WHERE about_id = 1";
+	$result = $conn->query($sql);
+	foreach($result as $row){
+		$current_desc = $row["about_desc"];
+	}
+	
 	//image upload
 	if(isset($_FILES["image"])){
 		$file_name = $_FILES['image']['name'];
@@ -20,10 +30,10 @@ else{
 		$file_tmp = $_FILES['image']['tmp_name'];
 		$file_type = $_FILES['image']['type'];
 		$file_ext = strtolower(end(explode('.', $_FILES['image']['name'])));
-		$extensions = array("jpeg","jpg","png");
+		$extensions = array("png");
 	
 		if(in_array($file_ext,$extensions)=== false && $file_ext != ""){
-			$wrongExtensionError= "extension not allowed, please choose a JPEG or PNG file.<br>";
+			$wrongExtensionError= "extension not allowed, please choose a PNG file.<br>";
 			$validImage = false;
 		}
 		if($file_size > 2097152){
@@ -31,7 +41,7 @@ else{
 			$validImage = false;
 		}
 		if($validImage){
-			move_uploaded_file($file_tmp, "images/about-page-image.".$file_ext);
+			move_uploaded_file($file_tmp, "images/about/about-page-image.".$file_ext);
 		}
 	}
 	//description upload
@@ -44,11 +54,8 @@ else{
 			$about_description = filter_var($about_description, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 		}
 		if($validForm && $validImage){
-			include "localHostConnect.php";
-			$sql = "INSERT INTO about (about_desc) VALUES(:aboutDesc)";
+			$sql = "UPDATE about SET about_desc = '$about_description' WHERE about_id = 1";
 			$stmt = $conn->prepare($sql);
-			$stmt->bindParam(':aboutDesc', $desc);
-			$desc = $about_description;
 			$stmt->execute();
 		}
 		
@@ -72,20 +79,18 @@ else{
 	if($_SESSION["user"] == "admin"){
 ?>
 	<div id="about-current">
-		<h3><a href="EPS-About.html" target="_blank">SEE THE CURRENT ABOUT PAGE</a></h3>
+		<h3><a href="EPS-About.php" target="_blank">SEE THE CURRENT ABOUT PAGE</a></h3>
 	</div>
-	<form id="about-update-form"action="" method="POST" enctype="multipart/form-data">
+	<form id="about-update-form"action="<?php echo $_SERVER['SCRIPT_NAME'];?>" method="POST" enctype="multipart/form-data">
 		<div id="about-update-image">
-			<img src="http://lorempixel.com/output/animals-q-c-640-480-3.jpg">
+			<img src="images/about/about-page-image.png">
 			<input type="file" name="image"><br>
 			<?php echo $wrongExtensionError; echo $fileTooLargeError;?>
 		</div>
 		<div id="about-update-description">
-		<p>UPDATE DESCRIPTION<br>
-		<textarea cols=40 name="about-update-description" ></textarea></p>
-		
-		<p style="white-space: pre-wrap;"><?php echo $emptyDescriptionError; echo $about_description;?></p>
-				
+			<p>UPDATE DESCRIPTION<br>
+			<textarea cols=40 name="about-update-description" placeholder="<?php echo $current_desc;?>" style="white-space: pre-wrap"></textarea></p>
+			<p><?php echo $emptyDescriptionError;?></p>	
 		</div>
 		<input type="submit" name="about-update-submit" value="Update">
 		</form>

@@ -2,7 +2,6 @@
 //set up session
 session_start();
 $msg = "";
-$_SESSION['user'] = "";
 
 if(isset($_POST["login-submit"])){
 	$user = $_POST["login-user"];
@@ -39,7 +38,7 @@ if(isset($_POST["login-logout"])){
 </head>
 <body>
 <?php 
-	if($_SESSION["user"] == "admin"){
+	if(array_key_exists('user', $_SESSION) && $_SESSION["user"] == "admin"){
 ?>
 	<H1>ADMINISTRATION BACK-END</h1>
 	<a href="EPS-AboutUpdate.php">Update ABOUT page</a><br>

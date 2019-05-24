@@ -4,4 +4,7 @@
 		width: 50%;
 		height: auto;
 	}
+	#about-description{
+		white-space: pre-wrap;
+	}
 }

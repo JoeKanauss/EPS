@@ -16,6 +16,7 @@
 	}	
 	.service .service-description{
 		grid-area: s-description;
+		white-space: pre-wrap;
 	}
 	.service .service-check{
 		grid-area: s-check;
