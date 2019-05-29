@@ -7,4 +7,7 @@
 	#about-description{
 		white-space: pre-wrap;
 	}
+	.sb-about, .f-about{
+		text-decoration: line-through;
+	}
 }

@@ -1,5 +1,8 @@
 /* EPS CONTACT PAGE STYLES */
 @media (max-width: 600px){
+	.sb-contact, .f-contact{
+		text-decoration: line-through;
+	}
 	#contact-form{
 	}
 	/* ---- Names ---- */
@@ -60,3 +63,4 @@
 	#contact-form #contact-buttons #contact-reset{
 		grid-area: c-reset;
 	}
+	

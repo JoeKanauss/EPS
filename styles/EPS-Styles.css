@@ -1,10 +1,7 @@
 body{
 	font-family: arial;
 }
-.on-page{
-	text-decoration: line-through;
-	
-}
+
 /* ------ HEADER ----- */
 #header{
 	background-color: lightblue;
@@ -164,7 +161,7 @@ body{
 		background-color: lavender;
 		padding: 2% 3%;
 		text-align: center;
-		min-height: 65vh;
+		min-height: 70vh;
 	}
 /* ---------- */
 

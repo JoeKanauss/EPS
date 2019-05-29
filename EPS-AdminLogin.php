@@ -28,13 +28,8 @@ if(isset($_POST["login-logout"])){
 ?>
 <!DOCTYPE html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Emily's Pet Sitting</title>
-	<link rel="stylesheet" type="text/css" href="styles/EPS-Styles.css">
-	<link rel="stylesheet" href="http:://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-	<script src="js/jquery-3.2.1.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="js/EPS-js.js"></script>
+	<?php include "EPS-headContent.php";?>
+	<title>ADMIN</title>
 </head>
 <body>
 <?php 
@@ -42,7 +37,7 @@ if(isset($_POST["login-logout"])){
 ?>
 	<H1>ADMINISTRATION BACK-END</h1>
 	<a href="EPS-AboutUpdate.php">Update ABOUT page</a><br>
-	<a href="">Update SERVICES page</a><br>
+	<a href="EPS-ServicesUpdate.php">Update SERVICES page</a><br>
 	<a href="">Update PHOTOS page</a><br>
 	<a href="">Update BOOKING CALENDAR page</a><br>
 	<a href="">Update TESTIMONIALS page</a>

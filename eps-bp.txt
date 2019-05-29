@@ -16,3 +16,33 @@ if(isset($_POST['check-button'])){
 		 $return_id = $_POST['return-id'];
 		echo $return_id
 	}
+	
+	?id=<?php echo $return_service_row['service_id'];?>
+	
+	
+	
+		
+		<div class="service">
+			<div class="service-title">SERVICE TITLE</div>
+			<div class="service-photo">
+				<img class="service-image" src="http://lorempixel.com/output/nature-q-c-640-480-4.jpg">
+			</div>
+			<div class="service-description">
+				<p>Vestibulum ut elit rutrum, feugiat sem eget, venenatis ipsum. Morbi pretium maximus tellus vel eleifend. Cras vitae libero augue. In ultrices quis nunc id sodales.</p>
+			</div>
+			<div class="service-check">
+				<form action=""><input type="submit" class="check-button" value="CHECK AVAILABILITY"></form>
+			</div>
+		</div>
+		
+		
+		
+		<div class="testimonial">
+			<p class="testimonial-quote">"Nunc et mauris blandit, dictum neque vitae, cursus diam."</p>
+			<p class="testimonial-name">- euismod nibh</p>
+		</div>
+		<div class="testimonial">
+			<p class="testimonial-quote">"Nunc et mauris blandit, dictum neque vitae, cursus diam."</p>
+			<p class="testimonial-name">- euismod nibh</p>
+		</div>
+		

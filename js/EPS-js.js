@@ -7,3 +7,4 @@ function showMenu(){
 function hideMenu(){
 	$("#sidebar").toggle("drop");
 }
+

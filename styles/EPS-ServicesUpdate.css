@@ -6,6 +6,9 @@
 		text-decoration: underline;
 		font-weight: bold;
 	}
+	#selected-service{
+		border: 1px solid black;
+	}
 	#selected-service .service-image {
 		width: 50%;
 		height: auto;
@@ -13,5 +16,17 @@
 	.service-description p{
 		white-space: pre-wrap;
 		padding: 0;
+	}
+	.delete-btn{
+		background-color: #9b3b3b;
+		color: white;
+		margin-left: 20%;
+	}
+	.hide-btn{
+		width: 100%;
+		margin-top: 2%;
+	}
+	.add-service-btn{
+		margin-top: 5%;
 	}
 }

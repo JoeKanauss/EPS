@@ -1,8 +1,10 @@
 /* EPS SERVICES PAGE STYLES */
 @media (max-width: 600px){
 	.service{
+		border: 1px solid black;
 		display: grid;
-		grid-template-areas: 's-title' 's-image' 's-description' 's-check';
+		grid-template-areas:  's-image' 's-price' 's-description' 's-check';
+		
 	}
 	.service .service-title{
 		grid-area: s-title;
@@ -13,6 +15,10 @@
 		grid-area: s-image;
 		width: 50%;
 		height: auto;
+	}
+	.service .service-price{
+		grid-area: s-price;
+		white-space: pre-wrap;
 	}	
 	.service .service-description{
 		grid-area: s-description;
@@ -20,5 +26,11 @@
 	}
 	.service .service-check{
 		grid-area: s-check;
+	}
+	.sb-services, .f-services{
+		text-decoration: line-through;
+	}
+	.hide-btn{
+		width: 100%;
 	}
 }

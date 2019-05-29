@@ -9,4 +9,7 @@
 		margin-top: 0;
 		font-style: italic;
 	}
+	.sb-testimonials, .f-testimonials{
+		text-decoration: line-through;
+	}
 }
