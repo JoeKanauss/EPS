@@ -1,51 +1,52 @@
-/* EPS SERVICES PAGE STYLES */
+/* EPS TESTIMONIALS UPDATE PAGE STYLES */
 @media (max-width: 600px){
 	body{
 		text-align: center;
 	}
-	.service{
+	.testimonial{
 		margin-bottom: 4%;
 		text-align: center;
 	}
-	.service-title{
+	.testimonial-name{
 		text-decoration: underline;
 	}
-	#selected-service{
+	#selected-testimonial{
 		border: 1px solid black;
 		text-align: center;
 		font-weight: bold;
 	}
-	#selected-service .service-image{
+	#selected-testimonial .testimonial-image{
 		width: 50%;
 		height: auto;
 		margin: auto auto 4% auto;
 	}
-	#selected-service input[type=file], input[type=text], input[type=submit]{
+	#selected-testimonial input[type=file], input[type=text], input[type=submit]{
 		margin-bottom: 4%;
 	}
-	#selected-service input[type=submit]{
-		margin-top: 4%;
-	}
-	#selected-service input[type=file]{
+	#selected-testimonial input[type=file]{
 		padding-left: 20%;
 	}
-	.service-description p{
+	#selected-testimonial input[type=submit]{
+		margin-top: 4%;
+	}
+	.testimonial-description p{
 		white-space: pre-wrap;
 		padding: 0;
 	}
 	.delete-btn{
 		background-color: #9b3b3b;
 		color: white;
-		margin-left: 20%;
+		margin-left: 10%;
 	}
 	input.hide-btn{
 		width: 100%;
 		margin-top: 2%;
 		margin-bottom: 0;
 	}
-	.add-service-form{
+	.add-testimonial-form{
 		margin-top: 4%;
 		text-align: center;
 		
 	}
+	
 }

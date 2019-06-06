@@ -46,3 +46,26 @@ if(isset($_POST['check-button'])){
 			<p class="testimonial-name">- euismod nibh</p>
 		</div>
 		
+		
+		
+		
+		<?php echo $_SERVER['SCRIPT_NAME'];?>?id=<?php echo $return_service_row['service_id'];?>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div class="photos-image">
+			<img src="http://lorempixel.com/output/animals-q-c-640-480-8.jpg" alt="caption">
+			<div class="photos-caption">CAPTION</div>
+		</div>

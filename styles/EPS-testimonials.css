@@ -1,11 +1,31 @@
 /* EPS TESTIMONIALS PAGE STYLES */
 @media (max-width: 600px){
-	.testimonial .testimonial-quote{
+	.testimonial-l{
+		margin-bottom: 10%;
 		text-align: left;
+	}
+	.testimonial-r{
+		margin-bottom: 10%;
+		text-align: right;
+	}
+	.testimonial-image-l{
+		float: left;
+		width: 25%;
+		height: auto;
+		margin-right: 5%;
+	}
+	.testimonial-image-r{
+		float: right;
+		width: 25%;
+		height: auto;
+		margin-left: 5%;
+	}
+	.testimonial-quote{
+		margin-top: 5%;
 		margin-bottom: 0;
 	}
-	.testimonial .testimonial-name{
-		text-align: right;
+	.testimonial-name{
+		1text-align: right;
 		margin-top: 0;
 		font-style: italic;
 	}

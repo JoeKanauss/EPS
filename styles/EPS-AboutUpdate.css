@@ -1,7 +1,17 @@
 /* EPS ABOUT UPDATE PAGE STYLES */
 @media (max-width: 600px){
+	body{
+		text-align: center;
+		font-weight: bold;
+	}
 	#about-update-image img{
 		width: 25%;
 		height: auto;
+	}
+	input[type=file], textarea, img{
+		margin-bottom: 4%;
+	}
+	input[type=file]{
+		padding-left: 20%;
 	}
 }

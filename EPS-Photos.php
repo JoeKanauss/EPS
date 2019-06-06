@@ -1,13 +1,15 @@
 <?php
 session_start();
 
+include "localHostConnect.php";
+$photosSql = "SELECT * FROM photos";
+$results = $conn->query($photosSql);
 ?>
 <!DOCTYPE html>
 <head>
 	<?php include "EPS-headContent.php";?>
 	<link rel="stylesheet" type="text/css" href="styles/EPS-Photos.css">
 	<title>PHOTOS</title>
-	
 </head>
 <body>
 	<div id="header">
@@ -19,31 +21,16 @@ session_start();
 	<?php include "EPS-sidebar.php";?>
 	
 	<div id="main">
+		<?php 
+			foreach($results as $photo){
+		?>
 		<div class="photos-image">
-			<img src="http://lorempixel.com/output/animals-q-c-640-480-8.jpg" alt="caption">
-			<div class="photos-caption">CAPTION</div>
+			<img src="<?php echo $photo['photos_link'];?>" alt="<?php echo $photo['photos_caption'];?>">
+			<div class="photos-caption"><?php echo $photo['photos_caption'];?></div>
 		</div>
-		<div class="photos-image">
-			<img src="http://lorempixel.com/output/animals-q-c-640-480-8.jpg" alt="caption">
-			<div class="photos-caption">CAPTION</div>
-		</div>
-		<div class="photos-image">
-			<img src="http://lorempixel.com/output/animals-q-c-640-480-8.jpg" alt="caption">
-			<div class="photos-caption">CAPTION</div>
-		</div>
-		<div class="photos-image">
-			<img src="http://lorempixel.com/output/animals-q-c-640-480-8.jpg" alt="caption">
-			<div class="photos-caption">CAPTION</div>
-		</div>
-		<div class="photos-image">
-			<img src="http://lorempixel.com/output/animals-q-c-640-480-8.jpg" alt="caption">
-			<div class="photos-caption">CAPTION</div>
-		</div>
-		<div class="photos-image">
-			<img src="http://lorempixel.com/output/animals-q-c-640-480-8.jpg" alt="caption">
-			<div class="photos-caption">CAPTION</div>
-		</div>
-		<div id="clear"></div>
+		<?php
+			}
+		?>
 	</div>
 	
 	<?php include "EPS-footer.php";?>

@@ -13,7 +13,7 @@ $validForm = true;
 	
 if($_SESSION["user"] !== "admin")
 {
-	header("Location: EPS-Services.html");
+	header("Location: EPS-Services.php");
 }
 else{
 	include "localHostConnect.php";
@@ -144,7 +144,7 @@ else{
 	if($_SESSION["user"] == "admin"){
 ?>
 	<div id="services-current">
-		<h3><a href="EPS-Services.html" target="_blank">SEE THE CURRENT SERVICES PAGE</a></h3>
+		<h3><a href="EPS-Services.php" target="_blank">SEE THE CURRENT SERVICES PAGE</a></h3>
 	</div>
 <?php 
 	//display all service titles with update/delete buttons
@@ -164,18 +164,18 @@ else{
 ?>
 	<div id="selected-service">
 		<form action="<?php echo $_SERVER['SCRIPT_NAME'];?>?id=<?php echo $return_service_row['service_id'];?>" method="POST" enctype="multipart/form-data">
-			<h4><?php echo $return_service_row['service_title'];?></h4>
+			<h2><?php echo $return_service_row['service_title'];?></h2>
 			current image:<br><img class="service-image" src="<?php echo $return_service_row['service_photo_link'];?>"><br>
-			new image: <input type="file" name="update-service-image"><br>
+			new image:<br><input type="file" name="update-service-image"><br>
 			<?php echo $wrongExtensionError; echo $fileTooLargeError;?>
-			title: <input type="text" name="update-service-title" value="<?php echo $return_service_row['service_title'];?>"><br>
-			price: § <input type="text" pattern="^\d*(\.\d{0,2})?$" name="update-service-price" value="<?php echo $return_service_row['service_price'];?>"><br>
+			title:<br><input type="text" name="update-service-title" value="<?php echo $return_service_row['service_title'];?>"><br>
+			price:<br>§ <input type="text" pattern="^\d*(\.\d{0,2})?$" name="update-service-price" value="<?php echo $return_service_row['service_price'];?>"><br>
 			description:<br>
 			<input type="hidden" name="update-service-id" value="<?php echo $return_service_row['service_id'];?>">
 			<textarea name="update-service-desc" cols=40 rows=20"><?php echo $return_service_row['service_description'];?></textarea><br>
 			<input type="submit" name="update-service-submit" value="Update Service">
-			<input type="button" class="delete-btn" name="update-service-delete" value="DELETE SERVICE"><br>
-			<a href="EPS-ServicesUpdate.php"><input type="button" class="hide-btn" value="▲"></a>
+			<input type="submit" class="delete-btn" name="update-service-delete" value="DELETE SERVICE"><br>
+			<a href="EPS-ServicesUpdate.php"><input type="button" class="hide-btn" value="&#9650;"></a>
 		</form>
 	</div>
 <?php }
@@ -183,7 +183,8 @@ else{
 	}
 	}
 ?>
-	<form action="<?php echo $_SERVER['SCRIPT_NAME'];?>" method="POST" enctype="multipart/form-data"><input type="submit" class="add-service-btn" name="add-service" value= "Add New Service"></form>
+	<hr>
+	<form class="add-service-form" action="<?php echo $_SERVER['SCRIPT_NAME'];?>" method="POST" enctype="multipart/form-data"><input type="submit" name="add-service" value= "Add New Service"></form>
 <?php
 	if(isset($_POST['add-service'])){
 ?>

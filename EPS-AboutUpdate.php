@@ -57,6 +57,7 @@ else{
 			$sql = "UPDATE about SET about_desc = '$about_description' WHERE about_id = 1";
 			$stmt = $conn->prepare($sql);
 			$stmt->execute();
+			header("Refresh:0");
 		}
 		
 	}
@@ -78,16 +79,16 @@ else{
 	</div>
 	<form id="about-update-form"action="<?php echo $_SERVER['SCRIPT_NAME'];?>" method="POST" enctype="multipart/form-data">
 		<div id="about-update-image">
-			<img src="images/about/about-page-image.png">
-			<input type="file" name="image"><br>
+			current image:<br><img src="images/about/about-page-image.png"><br>
+			new image:<br><input type="file" name="image"><br>
 			<?php echo $wrongExtensionError; echo $fileTooLargeError;?>
 		</div>
 		<div id="about-update-description">
-			<p>UPDATE DESCRIPTION<br>
-			<textarea cols=40 name="about-update-description" placeholder="<?php echo $current_desc;?>" style="white-space: pre-wrap"></textarea></p>
+			<p>description:<br>
+			<textarea cols=40 rows=25 name="about-update-description" style="white-space: pre-wrap"><?php echo $current_desc;?></textarea></p>
 			<p><?php echo $emptyDescriptionError;?></p>	
 		</div>
-		<input type="submit" name="about-update-submit" value="Update">
+		<input type="submit" name="about-update-submit" value="Update About Page">
 		</form>
 	</div>
 	</body>
