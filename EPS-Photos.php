@@ -25,8 +25,8 @@ $results = $conn->query($photosSql);
 			foreach($results as $photo){
 		?>
 		<div class="photos-image">
-			<img src="<?php echo $photo['photos_link'];?>" alt="<?php echo $photo['photos_caption'];?>">
-			<div class="photos-caption"><?php echo $photo['photos_caption'];?></div>
+			<a href="EPS-photoCaption.php?id=<?php echo $photo['photos_id'];?>"> <img src="<?php echo $photo['photos_link'];?>" title="<?php echo $photo['photos_caption'];?>" /></a>
+			
 		</div>
 		<?php
 			}

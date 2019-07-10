@@ -2,13 +2,13 @@
 @media (max-width: 600px){
 	.photos-image{
 		width: 45%;
-		border: 2px solid black;
 		float: left;
 		margin: 1%;
 	}
 	.photos-image img{
 		width: 100%;
 		height: auto;
+		margin-bottom: 0;
 	}
 	.photos-image .photos-caption{
 		border-top: 2px solid black;

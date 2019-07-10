@@ -3,6 +3,7 @@ session_start();
 
 	$contactName = "";
 	$contactPet = "";
+	$contactPetType = "";
 	$contactPhone = "";
 	$contactEmail = "";
 	$contactStartDate = "";
@@ -21,6 +22,8 @@ if(isset($_POST["contact-submit"]))
 	//set form variables
 	$contactName = $_POST["contact-name"];
 	$contactPet = $_POST["contact-pet"];
+	$contactPetType = $_POST["contact-pet-type"];
+	$contactPetTypeString = "";
 	$contactPhone = $_POST["contact-phone"];
 	$contactEmail = $_POST["contact-email"];
 	$contactStartDate = $_POST["start-date"];
@@ -40,6 +43,13 @@ if(isset($_POST["contact-submit"]))
 	$endTimeErrorColor = "";
 	$validForm = true;
 	$today = new DateTime();
+
+	//combine pet types
+	foreach($contactPetType as $petType){
+		$contactPetTypeString .= "|".$petType."| "; 
+	}
+
+	echo $contactPetTypeString;
 
 	//convert form date to month, dd, yyyy
 	$startDate =  date_create($contactStartDate);
@@ -138,7 +148,15 @@ else{
 	<form action="EPS-Contact.php" method="post" id="orderForm">
 		<div id="contact-names"> 
 			Name: <input type="text" id="contact-name" name="contact-name" value="<?php echo $contactName;?>" size="18.5">
-			Name of Pet: <input type="text" id="contact-pet" name="contact-pet" value="<?php echo $contactPet;?>" size="18.5">
+			Name of Pet(s): <input type="text" id="contact-pet" name="contact-pet" value="<?php echo $contactPet;?>" size="18.5">
+			Pet type (For multiple Pet Types, old ctrl and click on the options): 
+					  <select id="contact-pet-type" name="contact-pet-type[]" multiple size=6>
+ 						 <option value="dog">Dog</option>
+ 						 <option value="cat">Cat</option>
+ 						 <option value="fish">Fish</option>
+						 <option value="exotic">Exotic (please define in details)</option>
+						 <option value="other">Other (please define in details)</option>
+					  </select>
 		</div>
 		<div id="contact-communication">
 			Phone Number: <input type="tel" name="contact-phone" pattern ="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="ex: 123-555-6789" value="<?php echo $contactPhone;?>" size="21">
