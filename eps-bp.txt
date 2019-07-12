@@ -69,3 +69,75 @@ if(isset($_POST['check-button'])){
 			<img src="http://lorempixel.com/output/animals-q-c-640-480-8.jpg" alt="caption">
 			<div class="photos-caption">CAPTION</div>
 		</div>
+
+
+
+
+
+
+
+
+
+
+
+			#contact-form{
+	}
+	/* ---- Names ---- */
+	#contact-form #contact-names{
+		display: grid;
+		grid-template-areas: 'c-name c-pet';
+		text-align: right;
+	}
+	#contact-form #contact-names #contact-name{
+		display: c-name;
+		text-align: right;
+	}
+	#contact-form #contact-names #contact-pet{
+		display: c-pet;
+	}
+	
+	/* ---- Communication ---- */
+	#contact-form #contact-communication{
+		display: grid;
+		grid-template-areas: 'c-phone c-email';
+		text-align: right;
+	}
+	#contact-form #contact-communication #contact-phone{
+		grid-area: c-phone;
+	}
+	#contact-form #contact-communication #contact-email{
+		grid-area: c-email;
+	}
+	
+	/* ---- Details ---- */
+	#contact-form #contact-details{
+		display: grid;
+		grid-template-areas: 'c-start-d c-start-t' 'c-end-d c-end-t';
+		text-align: right;
+	}
+	#contact-form #contact-details #start-date{
+		grid-area: c-start-d;
+	}
+	#contact-form #contact-details #start-time{
+		grid-area: c-start-t;
+	}
+	#contact-form #contact-details #end-date{
+		grid-area: c-end-d;
+	}
+	#contact-form #contact-details #end-time{
+		grid-area: c-end-t;
+	}
+	
+	/* ---- Buttons ---- */
+	#contact-form #contact-buttons{
+		grid-area: c-buttons;
+		grid-template-areas: 'c-submit c-reset';
+		text-align: right;
+	}
+	#contact-form #contact-buttons #contact-submit{
+		grid-area: c-submit;
+	}
+	#contact-form #contact-buttons #contact-reset{
+		grid-area: c-reset;
+	}
+	
