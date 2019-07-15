@@ -1,0 +1,51 @@
+   body{
+        font-family: sans-serif;
+    }
+    #calendar{
+        width: 100%;
+    }
+    #top{
+        width: 100%;
+        text-align: center;
+        font-size: 2.5em;
+    }
+    #days{
+        width: 100%;
+        margin: auto;
+    }
+    #previous, #next{
+        font-size: .40em;
+        background-color: lightsalmon;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+    .day, .weekday, .xDay{
+        float: left;
+        width: 11%;
+        min-height: 50px;
+        padding: 1%;
+        text-align: left;
+        border: 1px solid black;
+    }
+    .day{
+        background-color: white;
+    }
+    .day:hover{
+        background-color:#ffdacc;
+        cursor: pointer;
+    }
+    .weekday{
+        background-color: lightsalmon;
+        min-height: 10px;
+        text-align: center;
+    }
+    .xDay{
+        background-color: lightsteelblue;
+    }
+    .xDay:hover{
+        cursor: not-allowed;
+        background-color: lightsteelblue;
+    }
+    .clear{
+        clear: both;
+    }

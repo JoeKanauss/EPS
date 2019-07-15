@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        var csvText="";
+
+        //VeldMuijz-stackoverflow
+        
+        function csvUpload(){
+
+            alert("csvText:"+csvText);
+             //split text into seperate lines on new lines and carriage returns
+            var textLines = csvText.split(/\\r\\n/);
+                      
+            //split line on tabs and commas
+             var headers = textLines[0].split(/\\t|,/);
+             var lines = [];
+             var locations = [];
+
+            for(var i=1; i<textLines.length; i++){
+                var data = textLines[i].split(/\t|,/);
+                if(data.length == headers.length){
+                    var location = {"name": data[0], "species": data[1], "color": data[2]};
+                    locations.push(location);
+                }
+            }
+            var collectedData = "";
+            for (var x=0; x < locations.length; x++){
+                collectedData += "Name: "+locations[x].name+"<br>";
+            }
+            document.getElementById("result").innerHTML = collectedData;  
+        }
+        
+        function getCSV(){
+            //create an XMLHttpRequest object
+            var xmlhttp = new XMLHttpRequest();
+            //create a url to use
+            var url = 'csvToJson.csv';
+             //onstate change of the xmlhttprequest object..
+            xmlhttp.onreadystatechange = function()
+            {
+                 //if the object is ready...
+                 if(this.readyState == 4 && this.status == 200)
+                  {
+                      //alert("there");
+                     //parse the responseText
+                     csvText = JSON.stringify(this.responseText);
+                     return csvText;
+                  }
+                  else{
+                      //alert("BOOO");
+                  }
+                  
+            }
+            //open the url
+            xmlhttp.open("GET", url, true);
+            //run the xmlhttp
+            xmlhttp.send(); 
+
+            setTimeout(function(){csvUpload();},
+                100);
+                
+        }
+    </script>
+    <div id="result"></div>
+</body>
+    <script>
+        getCSV();
+    </script>
+</html>

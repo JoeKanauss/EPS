@@ -1,0 +1,6 @@
+[
+{"name":"A birthday","date":"2018,03,24"},
+{"name":"Halloween","date":"2018,10,31"},
+{"name":"some Day","date":"2018,08,15"},
+{"name":"same Day Different Event","date":"2018,08,15"}
+]
