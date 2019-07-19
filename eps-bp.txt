@@ -141,3 +141,13 @@ if(isset($_POST['check-button'])){
 		grid-area: c-reset;
 	}
 	
+
+
+
+
+
+ // var collectedData = "";
+            // for (var x=0; x < locations.length; x++){
+            //     collectedData += "Name: "+locations[x].name+"<br>";
+            // }
+            // document.getElementById("result").innerHTML = collectedData; 

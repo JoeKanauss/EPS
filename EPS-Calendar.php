@@ -60,5 +60,5 @@
 	<?php include "EPS-footer.php";?>
 
 </body>
-	<script src="js/schedule.js"></script>
+	<script src="js/scheduleCSV.js"></script>
 </html>

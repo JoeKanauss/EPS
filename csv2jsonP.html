@@ -5,32 +5,8 @@
     <script>
         var csvText="";
 
-        //VeldMuijz-stackoverflow
+        //CREDIT:: VeldMuijz-stackoverflow
         
-        function csvUpload(){
-
-            alert("csvText:"+csvText);
-             //split text into seperate lines on new lines and carriage returns
-            var textLines = csvText.split(/\\r\\n/);
-                      
-            //split line on tabs and commas
-             var headers = textLines[0].split(/\\t|,/);
-             var lines = [];
-             var locations = [];
-
-            for(var i=1; i<textLines.length; i++){
-                var data = textLines[i].split(/\t|,/);
-                if(data.length == headers.length){
-                    var location = {"name": data[0], "species": data[1], "color": data[2]};
-                    locations.push(location);
-                }
-            }
-            var collectedData = "";
-            for (var x=0; x < locations.length; x++){
-                collectedData += "Name: "+locations[x].name+"<br>";
-            }
-            document.getElementById("result").innerHTML = collectedData;  
-        }
         
         function getCSV(){
             //create an XMLHttpRequest object
@@ -43,13 +19,15 @@
                  //if the object is ready...
                  if(this.readyState == 4 && this.status == 200)
                   {
-                      //alert("there");
-                     //parse the responseText
+                     //stringify the responseText
                      csvText = JSON.stringify(this.responseText);
-                     return csvText;
+                    //fill the dateAndEentArray with stringified Text using the display()
+                     dateAndEventArray = display(csvText);
+                     //return the csvText
+                     document.getElementById('result').innerHTML = "---DATES---<br>"+dateAndEventArray[0]+"<br>---EVENTS---<br>"+dateAndEventArray[1];
                   }
                   else{
-                      //alert("BOOO");
+
                   }
                   
             }
@@ -58,9 +36,48 @@
             //run the xmlhttp
             xmlhttp.send(); 
 
-            setTimeout(function(){csvUpload();},
-                100);
-                
+            // setTimeout(function(){csvUpload();},
+            //     100);
+
+
+        function display(csvText){
+                alert("csvText:" + csvText);
+                //split text into seperate lines on new lines and carriage returns
+                var textLines = csvText.split(/\\r\\n/);
+
+                //split line on tabs and commas
+                var headers = textLines[0].split(/\\t|,/);
+                var lines = [];
+                var locations = [];
+                //for each line...
+                for (var i = 1; i < textLines.length; i++) {
+                    //the data is separated by tabs or commas
+                    var data = textLines[i].split(/\t|,/);
+                    //if the there are equal amounts of data and headers... 
+                    if (data.length == headers.length) {
+                        //match up the headers
+                        var location = { "name": data[0], "date": data[1] };
+                        //add the data to the locations array
+                        locations.push(location);
+                    }
+                }
+                //initialize a datesArray
+                var datesArray = [];
+                //initialize an eventsArray
+                var eventsArray = [];
+                //for the length of the array parameter...
+                for (var i = 0; i < locations.length; i++) {
+                    //add the date property form the provided array to the datesArray
+                    datesArray.push(locations[i].date);
+                    //add the name property from the provided array to the eventsArray
+                    eventsArray.push(locations[i].name);
+                }
+                //document.getElementById('result').innerHTML = datesArray + '<br>' + eventsArray;
+               
+                //return the created two-dimensional array 
+                 return [datesArray, eventsArray];
+            }
+    
         }
     </script>
     <div id="result"></div>
