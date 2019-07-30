@@ -1,11 +1,13 @@
-﻿NAME ,DATE
-Halloween,10/31/2019
-Birthday,3/24/2019
-E Birthday,2/10/2019
-M Birthday,2/26/2019
-A Birthday,8/5/2019
-K Birthday,8/25/2019
-T Birthday,11/24/2019
-D Birthday,7/16/2019
-Christmas,12/25/2019
-New Year's Eve,12/31/2019
+﻿NAME ,DATE,FULL DAY
+Halloween,10/31/2019,yes
+Birthday,03/24/2019,no
+E Birthday,02/10/2019,yes
+M Birthday,02/26/2019,yes
+A Birthday,08/05/2019,yes
+K Birthday,08/25/2019,yes
+T Birthday,11/24/2019,no
+D Birthday,07/16/2019,no
+Christmas,12/25/2019,no
+New Year's Eve,12/31/2019,yes
+Another Test,04/01/2019,yes
+xxxx,12/31/9999,yes

@@ -1,14 +1,26 @@
 /* EPS PHOTOS PAGE STYLES */
 @media (max-width: 600px){
+	#main{
+		column-count: 2;
+		column-gap: 1em;
+	}
+	
 	.photos-image{
-		width: 45%;
-		float: left;
+		/* width: 47%; */
+		display: inline-block;
+		width: 100%;
+		/* height: auto; */
+		/* float: left; */
+		/* margin: 1%; */
 		margin: 1%;
 	}
 	.photos-image img{
 		width: 100%;
 		height: auto;
 		margin-bottom: 0;
+		/* object-fit: contain;
+   		width: 50%;
+  		height: 100%; */
 	}
 	.photos-image .photos-caption{
 		border-top: 2px solid black;

@@ -93,7 +93,6 @@ function setDays(date)
 
       //format the event day
       formatEvent(parsedDay);
-
     } 
 
     //lastDay is the the number of days the current month has (ex. lastDay of March is 31)
@@ -127,21 +126,23 @@ function setFullDay(){
         var eventYear = eventDate.substring(6, 10);
         //the eventDate is now the date object of the eventDate string
         var eventDate = new Date(eventYear, eventMonth-1, eventDay);
+        //alert(eventMonth + "/" + eventDay + "/" + eventYear)
+       //alert(eventDate);
 
        var currentDay = dateAndEventArray[0][i];
        //parse the currentDay into unique date string
         var parsedDay = Date.parse(eventDate);
        
-        // alert(parsedDay);
+        //alert(parsedDay);
         // break;
 
-        //add DAY FULL text if fullday is true
+        //add DAY FULL color if fullday is true
         if (dateAndEventArray[2][i] == "yes") {
                 if(document.body.contains(document.getElementById(parsedDay))){
-                    document.getElementById(parsedDay).innerHTML += "<span class='fullDay'>FULL DAY</span>";
+                    document.getElementById(parsedDay).style.backgroundColor = '#ffcccc';
                 }
         }
-        //alert(dateAndEventArray[2][i]);
+       // alert(dateAndEventArray[2][i]);
     }
 }
 
@@ -199,7 +200,7 @@ function setDate(cDateID)
     for(var x=0; x < days.length; x++)
     {
         //if the background color of the day is bright red
-        if(days[x].style.backgroundColor == 'rgb(255, 218, 204)')
+        if(days[x].style.backgroundColor == 'rgb(255, 255, 204)')
         {
             //change the background color to white
             days[x].style.backgroundColor = 'white';
@@ -213,10 +214,10 @@ function setDate(cDateID)
     }
     //color changing is to indicate which date is currently selected
     //if the background color of the date is blue-green (a single event day)
-    if( document.getElementById(cDateID).style.backgroundColor != "rgb(204, 255, 230)")
+    if( document.getElementById(cDateID).style.backgroundColor != "rgb(204, 255, 230)" && document.getElementById(cDateID).style.backgroundColor != "rgb(255, 204, 204)")
     {
         //change the color of the date to bright red
-        document.getElementById(cDateID).style.backgroundColor = "#ffdacc";
+        document.getElementById(cDateID).style.backgroundColor = "#ffffcc";
     }
     //turn the unique date string into an object of that date
     var thisDate = new Date(parseInt(cDateID));
@@ -254,6 +255,7 @@ function setDate(cDateID)
     
     //call disableSetEventButton() function
     //disableSetEventButton();    
+
 }
 
 function setEvent()
@@ -273,6 +275,7 @@ function setEvent()
 
     //make the background color of the date blue-green (for day with single event)
     document.getElementById(Date.parse(eventDate)).style.backgroundColor = '#ccffe6';
+
 }
 
 function formatEvent(parsedDay)

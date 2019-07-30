@@ -40,7 +40,8 @@ if(isset($_POST["login-logout"])){
 	<a href="EPS-ServicesUpdate.php">Update SERVICES page</a><br>
 	<a href="EPS-PhotosUpdate.php">Update PHOTOS page</a><br>
 	<a href="">Update BOOKING CALENDAR page</a><br>
-	<a href="EPS-TestimonialsUpdate.php">Update TESTIMONIALS page</a>
+	<a href="EPS-TestimonialsUpdate.php">Update TESTIMONIALS page</a><br>
+	<a href="EPS-CalendarUpdate.php">Update CALENDAR PAGE</a>
 	
 	<form action="" method="POST">
 		<input type="submit" id="login-logout" name="login-logout" value="Log out">
